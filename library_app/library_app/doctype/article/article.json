@@ -14,7 +14,9 @@
   "description",
   "isbn",
   "status",
-  "publisher"
+  "publisher",
+  "route",
+  "is_published"
  ],
  "fields": [
   {
@@ -32,12 +34,14 @@
   {
    "fieldname": "image",
    "fieldtype": "Attach Image",
-   "label": "Image"
+   "label": "Image",
+   "reqd": 1
   },
   {
    "fieldname": "author",
    "fieldtype": "Data",
-   "label": "Author"
+   "label": "Author",
+   "reqd": 1
   },
   {
    "fieldname": "description",
@@ -47,7 +51,8 @@
   {
    "fieldname": "isbn",
    "fieldtype": "Data",
-   "label": "ISBN"
+   "label": "ISBN",
+   "reqd": 1
   },
   {
    "fieldname": "status",
@@ -59,9 +64,22 @@
    "fieldname": "publisher",
    "fieldtype": "Data",
    "label": "Publisher"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Published"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "is_published",
  "links": [],
  "modified": "2025-01-23 15:01:34.087602",
  "modified_by": "Administrator",
@@ -104,6 +122,7 @@
    "share": 1
   }
  ],
+ "route": "article_doc",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
