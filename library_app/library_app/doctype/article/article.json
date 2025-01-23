@@ -1,6 +1,8 @@
 {
  "actions": [],
+ "allow_guest_to_view": 1,
  "allow_rename": 1,
+ "autoname": "field:article_name",
  "creation": "2025-01-22 17:47:07.427404",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,7 +14,9 @@
   "description",
   "isbn",
   "status",
-  "publisher"
+  "publisher",
+  "route",
+  "is_published"
  ],
  "fields": [
   {
@@ -24,17 +28,20 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Article Name",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "image",
    "fieldtype": "Attach Image",
-   "label": "Image"
+   "label": "Image",
+   "reqd": 1
   },
   {
    "fieldname": "author",
    "fieldtype": "Data",
-   "label": "Author"
+   "label": "Author",
+   "reqd": 1
   },
   {
    "fieldname": "description",
@@ -44,7 +51,8 @@
   {
    "fieldname": "isbn",
    "fieldtype": "Data",
-   "label": "ISBN"
+   "label": "ISBN",
+   "reqd": 1
   },
   {
    "fieldname": "status",
@@ -56,14 +64,28 @@
    "fieldname": "publisher",
    "fieldtype": "Data",
    "label": "Publisher"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Published"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "is_published",
  "links": [],
  "modified": "2025-01-23 12:20:11.257675",
  "modified_by": "Administrator",
  "module": "Library App",
  "name": "Article",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
@@ -100,6 +122,7 @@
    "share": 1
   }
  ],
+ "route": "article_doc",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
