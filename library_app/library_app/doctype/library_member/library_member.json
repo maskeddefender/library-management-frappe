@@ -55,6 +55,10 @@
  "module": "Library App",
  "name": "Library Member",
  "naming_rule": "Expression (old style)",
+ "modified": "2025-01-23 10:22:09.739582",
+ "modified_by": "Administrator",
+ "module": "Library App",
+ "name": "Library Member",
  "owner": "Administrator",
  "permissions": [
   {

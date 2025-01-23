@@ -46,4 +46,8 @@ frappe.ui.form.on('Library Member', {
             })
         })
     }
+<<<<<<< Updated upstream
 });
+=======
+});
+>>>>>>> Stashed changes
