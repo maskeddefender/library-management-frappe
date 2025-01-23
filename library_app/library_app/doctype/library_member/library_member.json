@@ -1,7 +1,10 @@
 {
  "actions": [],
  "allow_rename": 1,
+<<<<<<< HEAD
  "autoname": "LM.####",
+=======
+>>>>>>> 24490c040e6ffc5c2bfd9b33c97a3b4b209af8b2
  "creation": "2025-01-23 10:19:23.035449",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -9,7 +12,10 @@
   "first_name",
   "last_name",
   "full_name",
+<<<<<<< HEAD
   "column_break_zjth",
+=======
+>>>>>>> 24490c040e6ffc5c2bfd9b33c97a3b4b209af8b2
   "email_address",
   "phone"
  ],
@@ -42,19 +48,29 @@
    "fieldname": "phone",
    "fieldtype": "Phone",
    "label": "Phone"
+<<<<<<< HEAD
   },
   {
    "fieldname": "column_break_zjth",
    "fieldtype": "Column Break"
+=======
+>>>>>>> 24490c040e6ffc5c2bfd9b33c97a3b4b209af8b2
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
+<<<<<<< HEAD
  "modified": "2025-01-23 12:05:10.156211",
  "modified_by": "Administrator",
  "module": "Library App",
  "name": "Library Member",
  "naming_rule": "Expression (old style)",
+=======
+ "modified": "2025-01-23 10:22:09.739582",
+ "modified_by": "Administrator",
+ "module": "Library App",
+ "name": "Library Member",
+>>>>>>> 24490c040e6ffc5c2bfd9b33c97a3b4b209af8b2
  "owner": "Administrator",
  "permissions": [
   {

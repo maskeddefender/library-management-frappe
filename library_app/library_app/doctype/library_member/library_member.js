@@ -6,6 +6,7 @@
 
 // 	},
 // });
+<<<<<<< HEAD
 
 frappe.ui.form.on('Library Member', {
     before_save: function (frm) {
@@ -47,3 +48,5 @@ frappe.ui.form.on('Library Member', {
         })
     }
 });
+=======
+>>>>>>> 24490c040e6ffc5c2bfd9b33c97a3b4b209af8b2
