@@ -1,0 +1,10 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Library Settings",
+  "loan_period": 30,
+  "maximum_number_of_issued_articles": 5,
+  "modified": "2025-01-23 10:26:55.243824",
+  "name": "Library Settings"
+ }
+]

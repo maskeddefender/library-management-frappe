@@ -64,11 +64,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-23 11:48:27.870445",
+ "modified": "2025-01-23 12:33:31.735990",
  "modified_by": "Administrator",
  "module": "Library App",
  "name": "Library Membership",
- "naming_rule": "By script",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
