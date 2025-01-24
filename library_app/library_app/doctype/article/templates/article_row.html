@@ -1,76 +1,131 @@
-<div class="row align-items-start border rounded shadow-lg p-3 bg-light position-relative">
-	<!-- Top Ribbon -->
-	<div 
-	  style="position: absolute; top: -10px; left: -10px; background-color: #4CAF50; color: white; padding: 5px 10px; font-size: 0.8rem; font-weight: bold; border-radius: 5px;">
-	  Bestseller
-	</div>
-	
-	<!-- Book Details (Left Column) -->
-	<div class="col-md-8">
-	  <div class="row align-items-center">
-		<!-- Book Image -->
-		<div class="col-sm-2 d-flex justify-content-center">
-		  <img 
-			alt="{{ doc.name }}" 
-			src="{{ doc.image }}" 
-			class="img-fluid rounded-circle border border-2"
-			style="width: 60px; height: 60px; object-fit: cover; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);"
-		  />
-		</div>
-		
-		<!-- Book Info -->
-		<div class="col">
-		  <a 
-			class="font-size-lg text-dark text-decoration-none fw-bold"
-			href="{{ doc.route }}"
-			style="font-size: 1.3rem; display: block;"
-		  >
-			{{ doc.name }}
-		  </a>
-		  <p class="text-muted mb-2" style="font-size: 0.9rem;">By <span class="fw-medium">{{ doc.author }}</span></p>
-		  <div 
-			class="rating mt-2"
-			style="display: inline-flex; align-items: center; gap: 5px;"
-		  >
-			<!-- Star Rating -->
-			<span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
-			<span class="text-muted" style="font-size: 0.8rem;">4.0/5</span>
-		  </div>
-		</div>
-	  </div>
-	
-	  <!-- Issue Button -->
-	  <div class="mt-3">
-		<a 
-		  href=""
-		  class="btn btn-gradient btn-lg px-4 py-3"
-		  style="background: linear-gradient(90deg, #4CAF50, #8BC34A); color: white; font-size: 1.2rem; border: none; border-radius: 30px; transition: all 0.3s ease; text-decoration: none;"
-		  onmouseover="this.style.transform='scale(1.1)'" 
-		  onmouseout="this.style.transform='scale(1)'"
-		>
-		  Issue Book
-		</a>
-	  </div>
-	</div>
-	
-	<!-- Share Your Favorite Part (Right Column) -->
-	<div class="col-md-4">
-	  <div class="border rounded shadow-sm p-3" style="background-color: #f9f9f9;">
-		<h5 class="text-primary fw-bold">Share Your Favorite Part</h5>
-		<p class="text-muted mb-2" style="font-size: 0.85rem;">Tell us what you loved the most about this book:</p>
-		<textarea 
-		  class="form-control mb-2"
-		  rows="3"
-		  placeholder="Write about your favorite scene, quote, or moment..."
-		  style="resize: none; border: 1.5px solid #4CAF50; border-radius: 8px; padding: 8px;"
-		></textarea>
-		<button 
-		  class="btn btn-primary w-100"
-		  style="background-color: #4CAF50; border: none; padding: 8px; font-size: 0.9rem; border-radius: 8px;"
-		>
-		  Submit
-		</button>
-	  </div>
-	</div>
+<!-- Add Font Awesome -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book List</title>
+  
+  <!-- Font Awesome Kit -->
+  <script src="https://kit.fontawesome.com/9bee8001fb.js" crossorigin="anonymous"></script>
+  </head>
+<div 
+  class="row align-items-start border rounded shadow-lg p-3 bg-light position-relative mb-4" 
+  style="margin-bottom: 20px;"
+>
+  <!-- Top Ribbon -->
+  <div 
+    style="position: absolute; top: -10px; left: -10px; background-color: #4CAF50; color: white; padding: 5px 10px; font-size: 0.8rem; font-weight: bold; border-radius: 5px;">
+    Bestseller
   </div>
+  
+  <!-- Book Details (Left Column) -->
+  <div class="col-md-8">
+    <div class="row align-items-center">
+      <!-- Book Image -->
+      <div class="col-sm-2 d-flex justify-content-center">
+        <img 
+          alt="{{ doc.name }}" 
+          src="{{ doc.image }}" 
+          class="img-fluid rounded-circle border border-2"
+          style="width: 60px; height: 60px; object-fit: cover; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);"
+        />
+      </div>
+      
+      <!-- Book Info -->
+      <div class="col">
+        <a 
+          class="font-size-lg text-dark text-decoration-none fw-bold"
+          href="{{ doc.route }}"
+          style="font-size: 1.3rem; display: block;"
+        >
+          {{ doc.name }}
+        </a>
+        <p class="text-muted mb-2" style="font-size: 0.9rem;">By <span class="fw-medium">{{ doc.author }}</span></p>
+        <div 
+          class="rating mt-2"
+          style="display: inline-flex; align-items: center; gap: 5px;"
+        >
+          <!-- Star Rating -->
+          <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+          <span class="text-muted" style="font-size: 0.8rem;">4.0/5</span>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Issue Button -->
+    <div class="mt-3">
+      <a 
+        href="http://127.0.0.1:8005/member/new" 
+        class="btn btn-gradient btn-lg px-4 py-3"
+        style="background: linear-gradient(90deg, #4CAF50, #8BC34A); color: white; font-size: 1.2rem; border: none; border-radius: 30px; transition: all 0.3s ease; text-decoration: none;"
+        onmouseover="this.style.transform='scale(1.1)'" 
+        onmouseout="this.style.transform='scale(1)'"
+      >
+        Issue Book
+      </a>
+    </div>
+  </div>
+  
+  <!-- Share Your Favorite Part (Right Column) -->
+  <div class="col-md-4">
+    <!-- Toggle Button -->
+    <button 
+      class="btn btn-outline-primary w-100 mb-3" 
+      style="padding: 10px; font-size: 1rem; border-radius: 10px;"
+      onclick="toggleFavoritePartForm(this)"
+    >
+      Share Your Favorite Part
+    </button>
+
+    <!-- Hidden Form -->
+    <div 
+      class="border rounded shadow-sm p-3 favorite-part-form" 
+      style="background-color: #f9f9f9; display: none;"
+    >
+      <h5 class="text-primary fw-bold">Share Your Favorite Part</h5>
+      <p class="text-muted mb-2" style="font-size: 0.85rem;">Tell us what you loved the most about this book:</p>
+      <textarea 
+        class="form-control mb-2"
+        rows="3"
+        placeholder="Write about your favorite scene, quote, or moment..."
+        style="resize: none; border: 1.5px solid #4CAF50; border-radius: 8px; padding: 8px;"
+      ></textarea>
+      <button 
+        class="btn btn-primary w-100 submit-button"
+        style="background-color: #4CAF50; border: none; padding: 8px; font-size: 0.9rem; border-radius: 8px;"
+        onclick="handleFormSubmit(this)"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  // Toggle the form
+  function toggleFavoritePartForm(button) {
+    const form = button.nextElementSibling;
+    if (form.style.display === 'none' || form.style.display === '') {
+      form.style.display = 'block';
+    } else {
+      form.style.display = 'none';
+    }
+  }
+
+  // Handle form submission
+  function handleFormSubmit(button) {
+      const form = button.parentElement;
+      form.innerHTML = `
+        <div class="tick-container" 
+             style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 10px;">
+          <i class="fa-solid fa-check" style="font-size: 2.5rem; color: #4CAF50;"></i>
+          <p style="margin-top: 5px; font-size: 1rem; color: #4CAF50; font-weight: bold; text-align: center;">Submitted!</p>
+        </div>
+      `;
+    }
+</script>
+
+
   
