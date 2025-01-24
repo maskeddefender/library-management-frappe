@@ -56,12 +56,12 @@ frappe.ui.form.on("Article", {
         }
     },
 
-    
-
     validate: function (frm) {
         if (frm.doc.isbn && frm.doc.isbn.length !== 13) {
             frappe.throw(__("The ISBN must be exactly 13 characters long."));
+            frm.fields_dict.isbn.$input.css("border", "2px solid red");
         }
+        
     }
 });
 
