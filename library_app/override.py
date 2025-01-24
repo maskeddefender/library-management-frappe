@@ -14,7 +14,7 @@ def login_redirection():
     if user == "librariankorecent@gmail.com":
         # Redirect to Librarian's profile page
         frappe.local.response['home_page'] = f"/app/librarian"
-    elif user == "administrator":
+    elif user == "Administrator":
         # Redirect to the Article page
         frappe.local.response['home_page'] = "app/users"
     else:
