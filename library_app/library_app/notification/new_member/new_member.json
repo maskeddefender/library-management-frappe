@@ -1,0 +1,34 @@
+{
+ "attach_print": 0,
+ "channel": "Email",
+ "creation": "2025-01-24 11:14:24.792303",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Library Member",
+ "enabled": 1,
+ "event": "Save",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "<p>Congratulations! {{ doc.full_name }} you are added to Library Management System</p>\n\n<p>Enjoy your membership with us!</p>\n",
+ "message_type": "Markdown",
+ "modified": "2025-01-24 17:46:52.293959",
+ "modified_by": "manya@korecent.com",
+ "module": "Library App",
+ "name": "New Member",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": "email_address",
+   "receiver_by_role": ""
+  },
+  {
+   "receiver_by_document_field": "owner"
+  }
+ ],
+ "send_system_notification": 1,
+ "send_to_all_assignees": 0,
+ "sender": "Librarian",
+ "sender_email": "librariankorecent@gmail.com",
+ "subject": "Welcome to LMS {{ doc.full_name }}!\ud83e\udd73"
+}

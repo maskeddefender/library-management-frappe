@@ -9,28 +9,32 @@
 
 frappe.ui.form.on('Library Member', {
     before_save: function (frm) {
+        // Check if confirmation has already been shown
         if (!frm.confirmation_shown) {
             frappe.confirm(
                 'Are you sure you want to save the details of this new Library Member?',
                 () => {
-                    // If confirmed, set a flag and proceed with saving
-                    frm.confirmation_shown = true; // Prevent re-triggering the dialog
-                    frm.save(); // Manually trigger the save process
-                    frappe.msgprint(__('Library Member created successfully!')); // Debug success message
+                    // If confirmed, allow save by setting the flag
+                    frm.confirmation_shown = true; // Prevent re-triggering
+                    frm.save().then(() => {
+                        // Show a success message after the save is complete
+                        frappe.msgprint(__('Library Member has been added successfully!'));
+                    });
                 },
                 () => {
                     // If canceled, prevent saving
-                    frappe.msgprint(__('Save operation has been canceled.')); // Debug cancel message
+                    frappe.msgprint(__('Save operation has been canceled.'));
                     frappe.validated = false; // Block save
                 }
             );
-            frappe.validated = false; // Block the save temporarily
+            frappe.validated = false; // Temporarily block save
         } else {
-            // Reset the flag after confirmation
+            // Reset the flag after successful confirmation
             frm.confirmation_shown = false;
         }
-    }
+    },
 });
+
 
 
 frappe.ui.form.on('Library Member', {
