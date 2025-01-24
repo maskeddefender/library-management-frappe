@@ -10,6 +10,7 @@ app_license = "mit"
 
 fixtures = ["Library Settings"]
 fixtures = ["Article"]
+on_session_creation = ["library_app.override.login_redirection"]
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
