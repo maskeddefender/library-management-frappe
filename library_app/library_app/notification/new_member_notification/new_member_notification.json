@@ -12,7 +12,7 @@
  "is_standard": 1,
  "message": "<p>A new member {doc.first_name} is created in library management system</p>\n",
  "message_type": "Markdown",
- "modified": "2025-01-23 12:31:40.909326",
+ "modified": "2025-01-24 21:55:03.066596",
  "modified_by": "Administrator",
  "module": "Library App",
  "name": "new_member_notification",
