@@ -1,0 +1,155 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container mt-5">
+    <!-- Member Info Section -->
+    <div class="card shadow-lg p-4 mt-4 border-0 rounded-lg">
+        <h5 class="text-primary mb-4">{{ title }}</h5>
+        <!-- Animated Full Name -->
+        <h2 class="display-4 text-center animated-name" style="font-weight: 600;">{{ full_name }}</h2>
+
+        <!-- Member Info -->
+        <div class="list-group mt-4">
+            <div class="list-group-item">
+                <strong>Contact No:</strong> {{ phone }}
+            </div>
+            <div class="list-group-item">
+                <strong>Email Address:</strong> {{ email_address }}
+            </div>
+        </div>
+
+        <div class="card shadow-lg p-4 mt-5 border-0 rounded-lg">
+            <h5 class="text-primary mb-4">Books Issued to {{ full_name }}</h5>
+            <div id="issued-books-section">
+                <p class="text-muted">Loading issued books...</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Add custom CSS -->
+<style>
+    /* Animation for the full_name */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animated-name {
+        animation: fadeInUp 1.5s ease-in-out forwards;
+    }
+
+    /* Styling for the card and content */
+    .card {
+        background: linear-gradient(to right, #33b3a4, #91ddd4);
+        border-radius: 20px;
+    }
+
+    .card .list-group-item {
+        font-size: 1.1rem;
+        padding: 15px;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    .card .list-group-item:hover {
+        background-color: #c6f0ec;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        font-size: 3rem;
+        font-weight: 600;
+        color: #2d2adf;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .card {
+        background: linear-gradient(to right, #33b3a4, #91ddd4);
+        border-radius: 20px;
+    }
+
+    .card .list-group-item {
+        font-size: 1.1rem;
+        padding: 15px;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+    }
+
+    .card .list-group-item:hover {
+        background-color: #f0d8c6;
+    }
+
+    h2 {
+        font-size: 3rem;
+        font-weight: 600;
+        color: #fff;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Membership ID from the context
+        const membershipId = "{{ name }}";
+
+        // Fetch issued books using Frappe's API
+        frappe.call({
+            method: "library_app.library_app.doctype.library_member.library_member.get_books_issued_by_member",
+            args: { membership_id: membershipId },
+            callback: function (response) {
+                // console.log("API Response: ", response.message);
+                const books = response.message;
+                const issuedBooksSection = document.getElementById("issued-books-section");
+
+                if (books && books.length > 0) {
+                    let tableHTML = `
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Book Title</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    `;
+
+                    books.forEach(book => {
+                        tableHTML += `
+                            <tr>
+                                <td>${book.article}</td>
+                            </tr>
+                        `;
+                    });
+
+                    tableHTML += `</tbody></table>`;
+                    issuedBooksSection.innerHTML = tableHTML;
+                } else {
+                    issuedBooksSection.innerHTML = '<p class="text-muted">No books have been issued to this member.</p>';
+                }
+            },
+            error: function () {
+                const issuedBooksSection = document.getElementById("issued-books-section");
+                issuedBooksSection.innerHTML = '<p class="text-danger">Unable to fetch issued books at this time.</p>';
+            }
+        });
+    });
+</script>
+
+{% endblock %}

@@ -2,7 +2,7 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "LM-.###",
+ "autoname": "LM.#####",
  "creation": "2025-01-23 10:19:23.035449",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -11,7 +11,9 @@
   "last_name",
   "full_name",
   "email_address",
-  "phone"
+  "phone",
+  "route",
+  "is_published"
  ],
  "fields": [
   {
@@ -42,11 +44,25 @@
    "fieldname": "phone",
    "fieldtype": "Phone",
    "label": "Phone"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is published"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "is_published",
  "links": [],
  "modified": "2025-01-24 12:09:57.275877",
+ "modified": "2025-01-24 09:59:46.205771",
  "modified_by": "Administrator",
  "module": "Library App",
  "name": "Library Member",
@@ -66,6 +82,7 @@
    "write": 1
   }
  ],
+ "route": "lib_mem",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
