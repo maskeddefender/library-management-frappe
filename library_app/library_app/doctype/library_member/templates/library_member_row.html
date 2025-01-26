@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Members</title>
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: -15px auto;
+            padding: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            word-wrap: break-word; /* Prevents text overflow */
+        }
+
+        th {
+            color: #000;
+            font-weight: 700;
+			border-top: #fff;
+			border-left: #fff;
+			border-right: #fff;
+			border-bottom: 2px #000 solid;
+        }
+
+		td {
+			border-top: #fff;
+			border-left: #fff;
+			border-right: #fff;
+			border-bottom: #fff;
+		}
+
+        /* Adjust column widths */
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 25%; /* Membership ID */
+        }
+
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 25%; /* Name */
+        }
+
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 20%; /* Contact */
+        }
+
+        th:nth-child(4),
+        td:nth-child(4) {
+            width: 20%; /* Email */
+        }
+
+        th:nth-child(5),
+        td:nth-child(5) {
+            width: 10%; /* Action */
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <!-- Table Header -->
+            <thead id="addUserButton" style="display: none;">
+                <tr>
+                    <th>Membership ID</th>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <!-- Table Body -->
+            <tbody>
+                <!-- Loop through the docs here, example shown below -->
+                <tr>
+                    <td>{{ doc.name or "N/A" }}</td>
+                    <td>{{ doc.full_name or "N/A" }}</td>
+                    <td>{{ doc.phone or "N/A" }}</td>
+                    <td>{{ doc.email_address or "N/A" }}</td>
+                    <td>
+                        <a href="/{{ doc.route }}" class="btn btn-link text-primary">View Profile</a>
+                    </td>
+					<hr style="height:1.5px;border-width:0;color:gray;background-color:gray">
+                </tr>
+                <!-- More rows will follow -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (!document.querySelector('#addUserButton').hasAttribute('shown')) {
+                document.querySelector('#addUserButton').style.display = 'table-header-group'; // Show the button
+                document.querySelector('#addUserButton').setAttribute('shown', 'true'); // Mark it as shown
+            }
+        });
+    </script>
+</body>
+
+</html>
