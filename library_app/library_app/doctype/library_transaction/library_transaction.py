@@ -45,15 +45,37 @@ class LibraryTransaction(WebsiteGenerator):
             frappe.throw("Maximum limit reached for issuing articles")
 
     def validate_membership(self):
-        # check if a valid membership exist for this library member
+    # Check if a valid membership exists for this library member
         valid_membership = frappe.db.exists(
             "Library Membership",
             {
-                "library_member": self.library_member,
+               "library_member": self.library_member,
                 "docstatus": DocStatus.submitted(),
                 "from_date": ("<", self.date),
                 "to_date": (">", self.date),
             },
         )
+
+        # Check if member has paid membership
+        paid_membership = frappe.db.exists(
+            "Library Membership",
+            {
+                "library_member": self.library_member,
+                "docstatus": DocStatus.submitted(),
+                "paid": 1,
+            },
+        )
+
+        # Validate membership status
         if not valid_membership:
-            frappe.throw("The member does not have a valid membership")
+            frappe.throw(
+                "The membership for this member has expired or is not valid for the selected date."
+            )
+
+        if not paid_membership:
+            frappe.throw(
+                "The member does not have a paid membership."
+            )
+
+
+    
