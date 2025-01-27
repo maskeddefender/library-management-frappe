@@ -6,7 +6,7 @@ from frappe.model.docstatus import DocStatus
 
 
 class LibraryTransaction(Document):
-    def before_submit(self):
+    def before_save(self):
         if self.type == "Issue":
             self.validate_issue()
             self.validate_maximum_limit()
