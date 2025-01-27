@@ -1,11 +1,11 @@
 # changes by Aman Kumar
 
 import frappe
-from frappe.model.document import Document
+from frappe.website.website_generator import WebsiteGenerator
 from frappe.model.docstatus import DocStatus
 
 
-class LibraryTransaction(Document):
+class LibraryTransaction(WebsiteGenerator):
     def before_save(self):
         if self.type == "Issue":
             self.validate_issue()

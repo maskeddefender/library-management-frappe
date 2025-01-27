@@ -13,7 +13,9 @@
   "library_member",
   "column_break_xfcr",
   "type",
-  "date"
+  "date",
+  "route",
+  "is_published"
  ],
  "fields": [
   {
@@ -57,12 +59,25 @@
   {
    "fieldname": "column_break_xfcr",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "Is Published"
   }
  ],
+ "has_web_view": 1,
  "index_web_pages_for_search": 1,
+ "is_published_field": "is_published",
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-24 16:31:23.557741",
+ "modified": "2025-01-27 10:05:58.477648",
  "modified_by": "Administrator",
  "module": "Library App",
  "name": "Library Transaction",
@@ -94,6 +109,7 @@
    "write": 1
   }
  ],
+ "route": "issued-books",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []

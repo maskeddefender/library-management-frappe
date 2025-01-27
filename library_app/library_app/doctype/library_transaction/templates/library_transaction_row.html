@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="book-list">
+        {% if doc.type == "Issue" %}
+            <div class="book-item">
+                <div class="book-title">{{ doc.article }}</div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Add custom CSS -->
+<style>
+    /* Container styling */
+    /* .container {
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 20px;
+        background: linear-gradient(to bottom, #ffffff, #f0f4f8);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    } */
+
+    /* Book list styling
+    .book-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    } */
+
+    /* Individual book item styling */
+    .book-item {
+        padding: 15px;
+        background: #21087c;
+        border-radius: 8px;
+        border: 1px solid #e0e0e0;
+        /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+		width: 90%;
+    }
+
+    /* Book title styling */
+    .book-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #fff;
+    }
+</style>
