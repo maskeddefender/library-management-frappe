@@ -94,7 +94,7 @@
     }
 
     .card .list-group-item:hover {
-        background-color: #f0d8c6;
+        background-color: #c6f0e7;
     }
 
     h2 {
@@ -102,6 +102,57 @@
         font-weight: 600;
         color: #fff;
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Styling for the table */
+    .table {
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .table th, .table td {
+        padding: 15px;
+        text-align: left;
+    }
+
+    .table th {
+        background: linear-gradient(to right, #33b3a4, #91ddd4);
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1rem;
+    }
+
+    .table tbody tr:nth-child(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: #eafaf8;
+    }
+
+    .table tbody tr:hover {
+        background-color: #c6f0ec;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .table tbody td {
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .table-bordered {
+        border: 1px solid #ddd;
+    }
+
+    .table-bordered th, .table-bordered td {
+        border: 1px solid #ddd;
     }
 </style>
 
@@ -119,15 +170,10 @@
                 const books = response.message;
                 const issuedBooksSection = document.getElementById("issued-books-section");
 
-                if (books && books.length > 0) {
+                if (books.length > 0) {
                     let tableHTML = `
                         <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Book Title</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                            
                     `;
 
                     books.forEach(book => {
