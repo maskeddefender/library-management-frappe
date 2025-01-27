@@ -18,7 +18,6 @@ frappe.pages['librarian'].on_page_load = function (wrapper) {
                     </div>
                 </div>
 
-                <!-- Professional Buttons -->
                 <div class="sidebar-buttons">
                     <button id="view-members-btn" class="professional-button">View Library Members</button>
                     <button id="view-issued-books-btn" class="professional-button">View Issued Books</button>
@@ -77,10 +76,10 @@ frappe.pages['librarian'].on_page_load = function (wrapper) {
     });
 
     $('#view-members-btn').on('click', function () {
-        frappe.set_route('List', 'Library Member'); 
+        window.location.href = '/lib_mem'; 
     });
 
     $('#view-issued-books-btn').on('click', function () {
-        frappe.set_route('List', 'Issued Book'); 
+        window.location.href = '/issued-books'; 
     });
 };
